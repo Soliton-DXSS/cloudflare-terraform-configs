@@ -1,0 +1,596 @@
+{
+  "result": [
+    {
+      "id": "2fc5357b-6397-4a36-910c-23ec044e69d2",
+      "name": "hmasuda-dlp",
+      "description": "",
+      "precedence": 903072,
+      "enabled": true,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:12:54Z",
+      "updated_at": "2025-05-02T09:12:54Z",
+      "deleted_at": null,
+      "traffic": "any(dlp.profiles[*] in {\"53c0fba5-75cb-480f-977a-2f809207641d\"})",
+      "identity": "identity.email in {\"hiroki.masuda@soliton.co.jp\"}",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "68fc30a4-7535-4690-b132-4895e3f133ce",
+      "name": "Domain_Allow-DNS_Policy",
+      "description": "",
+      "precedence": 1153649,
+      "enabled": true,
+      "action": "allow",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-02T09:12:53Z",
+      "updated_at": "2025-05-02T09:12:53Z",
+      "deleted_at": null,
+      "traffic": "any(dns.domains[*] in {\"zscaler.com\"})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "b078c832-8180-4ddf-b772-6e7c018e9595",
+      "name": "kmzw-test-DLP",
+      "description": "機密データ保護",
+      "precedence": 1806745,
+      "enabled": true,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:13:03Z",
+      "updated_at": "2025-05-02T09:13:03Z",
+      "deleted_at": null,
+      "traffic": "(http.request.method in {\"GET\" \"PUT\" \"POST\"} and any(dlp.profiles[*] in {\"c74b6d08-4ce4-47ac-9880-611e64953444\"})) or (any(http.download.file.types[*] in {\"pptx\" \"pdf\" \"docx\"}) and any(dlp.profiles[*] in {\"c74b6d08-4ce4-47ac-9880-611e64953444\"}))",
+      "identity": "identity.email == \"akari.kumazawa@soliton.co.jp\" or identity.email == \"kmzw.lic@kmzw-example.com\"",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "d38fc332-f371-4d51-aef0-1ed396f9187a",
+      "name": "Categories_Block-DNS_Policy",
+      "description": "",
+      "precedence": 2306172,
+      "enabled": true,
+      "action": "block",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-02T09:12:57Z",
+      "updated_at": "2025-05-02T09:12:57Z",
+      "deleted_at": null,
+      "traffic": "any(dns.content_category[*] in {2 67 125 133 182 99 33 179 166 17 85 87 102 157 135 138 180 162 165 161 124 15 115 119 141})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "83c8cf74-626d-4780-ba47-f1cd0da29156",
+      "name": "Security_Block-DNS_Policy",
+      "description": "",
+      "precedence": 3460248,
+      "enabled": true,
+      "action": "block",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-02T09:13:01Z",
+      "updated_at": "2025-05-02T09:13:01Z",
+      "deleted_at": null,
+      "traffic": "any(dns.content_category[*] in {32 169 177 128}) or any(dns.security_category[*] in {68 178 80 83 176 175 117 131 134 151 153})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "24b5aba6-6f81-4277-b30a-f7d09276569a",
+      "name": "Not Inspect Rule",
+      "description": "To avoid TLS inspection by Cloudflare",
+      "precedence": 3611434,
+      "enabled": true,
+      "action": "off",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:13:00Z",
+      "updated_at": "2025-05-02T09:13:00Z",
+      "deleted_at": null,
+      "traffic": "any(http.conn.domains[*] == \"ids-dev-s.solitonsys.jp\") or any(http.conn.domains[*] == \"ids-dev.solitonsys.jp\") or any(http.conn.domains[*] == \"soliton.cftenant.com\") or any(http.conn.domains[*] == \"ids-s.soliton-ods.jp\") or any(http.conn.domains[*] == \"app.slack.com\") or (any(app.ids[*] in {1245}) or any(app.type.ids[*] in {16})) or any(http.conn.dst_ip[*] == 172.16.0.200)",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "5467eb44-e9be-4dbf-8b2e-695801a22087",
+      "name": "Fujita_Domain_Allow-DNS_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 4611349,
+      "enabled": false,
+      "action": "allow",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-02T09:12:54Z",
+      "updated_at": "2025-05-02T09:12:54Z",
+      "deleted_at": null,
+      "traffic": "any(dns.domains[*] in {\"akamaihd.net\" \"autodiscover.fjt2.onmicrosoft.com\" \"broadcenter.jp\" \"cdn.office.net\" \"click.status.xbox.com\" \"config.messenger.msn.com\" \"daiwahouse.co.jp\" \"diamond.sflag.co.jp\" \"facebook.com\" \"fbcdn.net\" \"fjt2.mail.onmicrosoft.com\" \"fujita.co.jp\" \"game.watch.impress.co.jp\" \"googlevideo.com\" \"glpjreit.com\" \"home.office.com\" \"itunes.apple.com\" \"jpx.co.jp\" \"kentem.jp\" \"kurosu.info\" \"lve.jp\" \"microsoft.com\" \"mmt-tv.co.jp\" \"mp.weixin.qq.com\" \"nakano.seikatsusha.me\" \"nomura.co.jp\" \"office.com\" \"office365.com\" \"onmicrosoft.com\" \"opsv1.a-road.info\" \"outlook.com\" \"portal.office.com\" \"rr.office.microsoft.com\" \"united-reit.co.jp\" \"urbanreallife.blog52.fc2.com\" \"videog.jp\" \"windows.net\" \"www.adbayes.com\" \"www.edgrid.jp\" \"www.fukushima-pref.stream.jfit.co.jp\" \"www.jhrth.co.jp\" \"www.kenzaiya.com\" \"www.kukkanen.tokyo\" \"www.materialworld.jp\" \"www.mercerjapanis.jp\" \"www.reitdb.com\" \"yahoo.co.jp\" \"youtu.be\" \"youtube.com\"})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "be224794-f419-4a4b-b121-f810a57d93be",
+      "name": "Fujita_Domain_Block-DNS_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 5611378,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-02T09:12:58Z",
+      "updated_at": "2025-05-02T09:12:58Z",
+      "deleted_at": null,
+      "traffic": "any(dns.domains[*] in {\"legendworld.jp\" \"2ch.net\" \"www.heiwajima.gr.jp\" \"www.gamagori-kyotei.com\" \"qhit.net\"})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "e74dd857-df68-4ed3-a6c8-1b198b228567",
+      "name": "Fujita_Categories_Block-DNS_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 6611830,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-05T05:26:06Z",
+      "updated_at": "2025-05-05T05:26:06Z",
+      "deleted_at": null,
+      "traffic": "any(dns.content_category[*] in {2 67 125 133 70 74 76 79 92 96 100 106 107 116 120 121 127 139 156 164 73 82 24 181 71 72 173 78 84 86 94 97 104 105 114 174 93 130 132 136 147 149 154 158 140 148}) and not(any(dns.resolved_ips[*] in {59.84.158.137 64.4.0.0/18 157.60.0.0/16 157.56.0.0/14 157.54.0.0/15 183.182.200.229 183.182.200.230 125.206.231.219}))",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "ed59011d-f4be-44f4-bb16-20b0e3e0a65c",
+      "name": "Fujita_Security_Block-DNS_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 7611418,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "dns"
+      ],
+      "created_at": "2025-05-05T05:26:06Z",
+      "updated_at": "2025-05-05T05:26:06Z",
+      "deleted_at": null,
+      "traffic": "(any(dns.security_category[*] in {68 178 80 83 176 175 117 131 134 151 153}) and not(any(dns.resolved_ips[*] in {59.84.158.137 64.4.0.0/18 157.60.0.0/16 157.56.0.0/14 157.54.0.0/15 183.182.200.229 183.182.200.230 125.206.231.219}))) or (any(dns.content_category[*] in {32 169 177 128}) and not(any(dns.resolved_ips[*] in {59.84.158.137 64.4.0.0/18 157.60.0.0/16 157.56.0.0/14 157.54.0.0/15 183.182.200.229 183.182.200.230 125.206.231.219})))",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "eff9564f-ad47-4e5c-a278-ff13429940f1",
+      "name": "Domain_Allow-HTTP_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 8611217,
+      "enabled": false,
+      "action": "allow",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:13:04Z",
+      "updated_at": "2025-05-02T09:13:04Z",
+      "deleted_at": null,
+      "traffic": "any(http.request.domains[*] in {\"akamaihd.net\" \"autodiscover.fjt2.onmicrosoft.com\" \"broadcenter.jp\" \"cdn.office.net\" \"click.status.xbox.com\" \"config.messenger.msn.com\" \"daiwahouse.co.jp\" \"diamond.sflag.co.jp\" \"facebook.com\" \"fbcdn.net\" \"fjt2.mail.onmicrosoft.com\" \"fujita.co.jp\" \"game.watch.impress.co.jp\" \"googlevideo.com\" \"glpjreit.com\" \"home.office.com\" \"itunes.apple.com\" \"jpx.co.jp\" \"kentem.jp\" \"kurosu.info\" \"lve.jp\" \"microsoft.com\" \"mmt-tv.co.jp\" \"mp.weixin.qq.com\" \"nakano.seikatsusha.me\" \"nomura.co.jp\" \"office.com\" \"office365.com\" \"onmicrosoft.com\" \"opsv1.a-road.info\" \"outlook.com\" \"portal.office.com\" \"rr.office.microsoft.com\" \"united-reit.co.jp\" \"urbanreallife.blog52.fc2.com\" \"videog.jp\" \"windows.net\" \"www.adbayes.com\" \"www.edgrid.jp\" \"www.fukushima-pref.stream.jfit.co.jp\" \"www.jhrth.co.jp\" \"www.kenzaiya.com\" \"www.kukkanen.tokyo\" \"www.materialworld.jp\" \"www.mercerjapanis.jp\" \"www.reitdb.com\" \"yahoo.co.jp\" \"youtu.be\" \"youtube.com\"})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "d8e38920-936c-4344-bae9-b0b05c70a11f",
+      "name": "Domain_Block-HTTP_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 9611512,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:13:05Z",
+      "updated_at": "2025-05-02T09:13:05Z",
+      "deleted_at": null,
+      "traffic": "any(http.request.domains[*] in {\"legendworld.jp\" \"2ch.net\" \"www.heiwajima.gr.jp\" \"www.gamagori-kyotei.com\" \"qhit.net\" \"www.yahoo.co.jp\"})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "228a32b6-26bc-4bf9-808b-69e13d14b4b6",
+      "name": "Categories_Block-HTTP_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 10611487,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-05T05:26:08Z",
+      "updated_at": "2025-05-05T05:26:08Z",
+      "deleted_at": null,
+      "traffic": "any(http.request.uri.content_category[*] in {2 67 125 133 70 74 76 79 92 96 100 106 107 116 120 121 127 139 156 164 73 82 148 24 181 71 72 173 78 84 86 94 97 104 105 114 174 93 130 132 136 147 149 154 158 140})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "6a07870c-38a0-48bf-9e7e-c89e24be828c",
+      "name": "Security_Block-HTTP_Policy",
+      "description": "フジタ環境検証用",
+      "precedence": 11611489,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-02T09:12:56Z",
+      "updated_at": "2025-05-02T09:12:56Z",
+      "deleted_at": null,
+      "traffic": "any(http.request.uri.security_category[*] in {68 178 80 83 176 175 117 131 134 151 153}) or any(http.request.uri.content_category[*] in {32 169 177 128})",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "0de080c0-eff6-4582-a81d-59f7ab281ebc",
+      "name": "Allow rule for hmasuda-Cloudflared-9.5",
+      "description": "",
+      "precedence": 13611170,
+      "enabled": true,
+      "action": "allow",
+      "filters": [
+        "l4"
+      ],
+      "created_at": "2025-05-02T09:12:55Z",
+      "updated_at": "2025-05-02T09:12:55Z",
+      "deleted_at": null,
+      "traffic": "(net.dst.ip in {172.31.255.254} and net.dst.port in {22 137 138 139 445 3389} and net.protocol in {\"tcp\" \"udp\"}) or (net.dst.ip in {172.31.254.0/24 172.31.255.0/24} and net.dst.port in {22} and net.protocol in {\"tcp\" \"udp\"})",
+      "identity": "identity.email in {\"hiroki.masuda@soliton.co.jp\"}",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "b2ebaa88-5530-4bc6-831d-47f6e9bdef80",
+      "name": "Block rule for hmasuda-Cloudflared-9.5",
+      "description": "",
+      "precedence": 14611726,
+      "enabled": true,
+      "action": "block",
+      "filters": [
+        "l4"
+      ],
+      "created_at": "2025-05-02T09:12:45Z",
+      "updated_at": "2025-05-02T09:12:45Z",
+      "deleted_at": null,
+      "traffic": "net.dst.ip in {172.31.255.0/24 172.31.254.0/24}",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "eb5f80cc-3d92-461b-903f-9ef82b0f3ee7",
+      "name": "Allow rule for Active Directory",
+      "description": "",
+      "precedence": 16611320,
+      "enabled": false,
+      "action": "allow",
+      "filters": [
+        "l4"
+      ],
+      "created_at": "2025-05-05T05:26:05Z",
+      "updated_at": "2025-05-05T05:26:05Z",
+      "deleted_at": null,
+      "traffic": "net.dst.ip == 10.15.210.200",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "6bd6eab0-66c2-40dc-a48e-d26bd1a169f8",
+      "name": "Block rule for Active Directory",
+      "description": "",
+      "precedence": 17611561,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "l4"
+      ],
+      "created_at": "2025-05-05T05:26:09Z",
+      "updated_at": "2025-05-05T05:26:09Z",
+      "deleted_at": null,
+      "traffic": "(net.dst.ip == 10.15.210.200 and net.dst.port == 88 and net.protocol == \"tcp\") or (net.dst.ip == 10.7.1.14 and net.dst.port == 53 and net.protocol == \"udp\") or (net.dst.ip == 10.7.1.13 and net.dst.port == 53 and net.protocol == \"udp\")",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    },
+    {
+      "id": "2fefe927-3718-426c-a4bc-70fdc417e7f9",
+      "name": "block 2ch",
+      "description": "block \".2ch.net",
+      "precedence": 17612561,
+      "enabled": false,
+      "action": "block",
+      "filters": [
+        "http"
+      ],
+      "created_at": "2025-05-05T07:47:35Z",
+      "updated_at": "2025-05-05T14:36:19Z",
+      "deleted_at": null,
+      "traffic": "any(http.request.domains[*] matches \".2ch.net\")",
+      "identity": "",
+      "device_posture": "",
+      "version": 1,
+      "rule_settings": {
+        "block_page_enabled": false,
+        "block_reason": "",
+        "override_ips": null,
+        "override_host": "",
+        "l4override": null,
+        "biso_admin_controls": null,
+        "add_headers": null,
+        "ip_categories": false,
+        "ip_indicator_feeds": false,
+        "check_session": null,
+        "insecure_disable_dnssec_validation": false
+      }
+    }
+  ],
+  "success": true,
+  "errors": [],
+  "messages": []
+}
