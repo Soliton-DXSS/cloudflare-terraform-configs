@@ -57,7 +57,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_91e8ef06-7f60-4c24-805
 
   account_id  = var.cloudflare_account_id
   name        = "Fujita_Domain_Allow-DNS_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 4611
   enabled     = false
   action      = "allow"
@@ -71,7 +71,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_6d6d1abb-8726-433c-928
 
   account_id  = var.cloudflare_account_id
   name        = "Fujita_Domain_Block-DNS_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 5611
   enabled     = false
   action      = "block"
@@ -85,7 +85,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_30b0bd6b-081c-474c-868
 
   account_id  = var.cloudflare_account_id
   name        = "Fujita_Categories_Block-DNS_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 6611
   enabled     = false
   action      = "block"
@@ -99,7 +99,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_b6927d0a-139f-406c-9c3
 
   account_id  = var.cloudflare_account_id
   name        = "Fujita_Security_Block-DNS_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 7611
   enabled     = false
   action      = "block"
@@ -113,7 +113,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_b2c3802d-5490-4ee5-b9c
 
   account_id  = var.cloudflare_account_id
   name        = "Domain_Allow-HTTP_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 8611
   enabled     = false
   action      = "allow"
@@ -127,7 +127,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_fcc25610-ce53-4f38-b70
 
   account_id  = var.cloudflare_account_id
   name        = "Domain_Block-HTTP_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 9611
   enabled     = false
   action      = "block"
@@ -141,7 +141,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_f13555f2-2c9c-4d3a-898
 
   account_id  = var.cloudflare_account_id
   name        = "Categories_Block-HTTP_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 10611
   enabled     = false
   action      = "block"
@@ -155,7 +155,7 @@ resource "cloudflare_zero_trust_gateway_policy" "imported_155ac2bd-6ccb-4736-b8c
 
   account_id  = var.cloudflare_account_id
   name        = "Security_Block-HTTP_Policy"
-  description = "フジタ環境検証用"
+  description = "ゼネコンサンプル環境検証用"
   precedence  = 11611
   enabled     = false
   action      = "block"
