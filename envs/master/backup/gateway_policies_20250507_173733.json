@@ -189,7 +189,7 @@
     {
       "id": "5467eb44-e9be-4dbf-8b2e-695801a22087",
       "name": "Fujita_Domain_Allow-DNS_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 4611349,
       "enabled": false,
       "action": "allow",
@@ -220,7 +220,7 @@
     {
       "id": "be224794-f419-4a4b-b121-f810a57d93be",
       "name": "Fujita_Domain_Block-DNS_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 5611378,
       "enabled": false,
       "action": "block",
@@ -251,7 +251,7 @@
     {
       "id": "e74dd857-df68-4ed3-a6c8-1b198b228567",
       "name": "Fujita_Categories_Block-DNS_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 6611830,
       "enabled": false,
       "action": "block",
@@ -282,7 +282,7 @@
     {
       "id": "ed59011d-f4be-44f4-bb16-20b0e3e0a65c",
       "name": "Fujita_Security_Block-DNS_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 7611418,
       "enabled": false,
       "action": "block",
@@ -313,7 +313,7 @@
     {
       "id": "eff9564f-ad47-4e5c-a278-ff13429940f1",
       "name": "Domain_Allow-HTTP_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 8611217,
       "enabled": false,
       "action": "allow",
@@ -344,7 +344,7 @@
     {
       "id": "d8e38920-936c-4344-bae9-b0b05c70a11f",
       "name": "Domain_Block-HTTP_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 9611512,
       "enabled": false,
       "action": "block",
@@ -375,7 +375,7 @@
     {
       "id": "228a32b6-26bc-4bf9-808b-69e13d14b4b6",
       "name": "Categories_Block-HTTP_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 10611487,
       "enabled": false,
       "action": "block",
@@ -406,7 +406,7 @@
     {
       "id": "6a07870c-38a0-48bf-9e7e-c89e24be828c",
       "name": "Security_Block-HTTP_Policy",
-      "description": "フジタ環境検証用",
+      "description": "環境検証用",
       "precedence": 11611489,
       "enabled": false,
       "action": "block",
